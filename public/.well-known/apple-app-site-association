@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["T84QZS65DQ.com.facebook.internal.sdk.samples.Hackbook.localDevelopment"],
+        "components": [
+          {
+            "/": "/oauth/response/*",
+            "comment": "Matches any URL with a path that starts with /oauth/response/"
+          }
+        ]
+      }
+    ]
+  }
+}

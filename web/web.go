@@ -31,7 +31,7 @@ import (
 	"github.com/daaku/ctxerr"
 	"github.com/daaku/ctxmux"
 	"github.com/daaku/go.signedrequest/appdata"
-	"github.com/daaku/go.static"
+	static "github.com/daaku/go.static"
 	"github.com/facebookgo/fbapp"
 	"github.com/fbsamples/fbrell/adminweb"
 	"github.com/fbsamples/fbrell/examples/viewexamples"
@@ -82,6 +82,7 @@ func (a *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		mux.GET("/favicon.ico", ctxmux.HTTPHandler(fileserver))
 		mux.GET("/f8.jpg", ctxmux.HTTPHandler(fileserver))
 		mux.GET("/robots.txt", ctxmux.HTTPHandler(fileserver))
+		mux.GET("/.well-known/apple-app-site-association", ctxmux.HTTPHandler(fileserver))
 		mux.GET(public+"*rest", ctxmux.HTTPHandler(http.StripPrefix(public, fileserver)))
 		mux.GET("/info/*rest", a.ContextHandler.Info)
 		mux.POST("/info/*rest", a.ContextHandler.Info)
